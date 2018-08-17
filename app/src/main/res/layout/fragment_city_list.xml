@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto">-->
+    <!--<data>-->
+        <!--<variable-->
+            <!--name="cityViewModel"-->
+            <!--type="com.me.cl.materialtabhost.MVVM.viewmodel.CityListViewModel"/>-->
+    <!--</data>-->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/titlebar"
+        style="@style/Widget.AppCompat.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@android:color/white" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        style="@style/Widget.Design.TabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlebar"
+        app:tabIndicatorColor="@color/tab_indicator"
+        app:tabTextColor="@color/Tab_default_text">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO.ONE" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TWO" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        style="@style/Widget.Design.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_icon" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_city_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+</android.support.constraint.ConstraintLayout>
+<!--</layout>-->

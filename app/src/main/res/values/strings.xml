@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MaterialTabHost</string>
+    <string name="app_bar_title">MaterialTabHost Sample</string>
+</resources>
