@@ -7,8 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
 import com.demo.cl.app.presentation.MyApplication
-import com.me.cl.materialtabhost.MyApplication
-import com.me.cl.materialtabhost.mvvm.di.DaggerAppComponent
+import com.demo.cl.app.presentation.di.DaggerAppComponent
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector

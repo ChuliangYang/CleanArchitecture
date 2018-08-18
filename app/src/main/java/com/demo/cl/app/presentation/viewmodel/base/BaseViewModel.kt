@@ -1,19 +1,15 @@
 package com.demo.cl.app.presentation.viewmodel.base
 
 import android.arch.lifecycle.ViewModel
-import com.demo.cl.app.data.repos.base.BaseRepository
-import com.demo.cl.app.data.repos.base.ClearableRepository
+import com.demo.cl.app.presentation.event.ViewModelClearedEvent
+import org.greenrobot.eventbus.EventBus
 
-open class BaseViewModel(val repo: BaseRepository?=null):ViewModel(){
+open class BaseViewModel:ViewModel(){
     var cache:MutableMap<String?,Any?>? = mutableMapOf()
 
     override fun onCleared() {
         super.onCleared()
-        repo?.apply{
-            if(this is ClearableRepository){
-                clear()
-            }
-        }
+        EventBus.getDefault().post(ViewModelClearedEvent(this::class))
         cache?.clear()
         cache=null
     }

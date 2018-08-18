@@ -1,7 +1,7 @@
 package com.demo.cl.app.domain.entity.protocol
 
 // Encapsulate original data as well as loading status
-data class DataResource<out OriginalType>(val loadingStatus: DataStatus, val original:OriginalType?, val extraMessage:String?){
+data class DataResource<OriginalType>(var loadingStatus: DataStatus, var original:OriginalType?=null, var extraMessage:String?=null){
     companion object {
         fun <T> success(originalData:T?, extraMessage:String?=null): DataResource<T> {
             return DataResource(DataStatus.SUCCESS, originalData, extraMessage)

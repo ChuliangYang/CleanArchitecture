@@ -86,36 +86,4 @@ class CityListPageAdapter(val twoList: Array<List<CityModel>>) : ViewStatePagerA
     override fun getCount(): Int {
         return twoList.size
     }
-
-//    override fun instantiateItem(container: ViewGroup, position: Int): Any {
-//        val baseContext=container.context
-//        val rv = LayoutInflater.from(baseContext).inflate(R.layout.recyclerview, container, false) as RecyclerView
-//        rv.apply {
-//            rv.layoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.VERTICAL, false)
-//            if (position == 0) {
-//                rv.adapter = CityAdapterBind().apply {
-//                    submitList(twoList[position])
-//                }
-//                rv.tag = 0
-//                rv_state0?.let {
-//                    rv.layoutManager.onRestoreInstanceState(it)
-//                    rv_state0 = null
-//                }
-//            } else {
-//                rv.adapter = CityAdapterBind().apply {
-//                    submitList(twoList[position])
-//                }
-//                rv.tag = 1
-//                rv_state1?.let {
-//                    rv.layoutManager.onRestoreInstanceState(it)
-//                    rv_state1 = null
-//                }
-//            }
-//
-//            container.addView(rv)
-//        }
-//
-//        return rv
-//    }
-
 }

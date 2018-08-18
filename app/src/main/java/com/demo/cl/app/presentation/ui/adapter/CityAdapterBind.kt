@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.demo.cl.app.presentation.entity.CityModel
 import com.demo.cl.clean_architecture.R
+import com.demo.cl.clean_architecture.databinding.ItemCityBindBinding
 
 class CityAdapterBind: ListAdapter<CityModel, DataBoundViewHolder<ItemCityBindBinding>>(object:DiffUtil.ItemCallback<CityModel>(){
     override fun areItemsTheSame(oldItem: CityModel?, newItem: CityModel?): Boolean {

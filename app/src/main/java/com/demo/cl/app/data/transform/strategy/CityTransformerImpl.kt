@@ -3,8 +3,9 @@ package com.demo.cl.app.data.transform.strategy
 import com.demo.cl.app.data.entity.CityEntity
 import com.demo.cl.app.data.transform.protocol.CityTransformer
 import com.demo.cl.app.domain.entity.City
+import javax.inject.Inject
 
-class CityTransformerImpl constructor(): CityTransformer {
+class CityTransformerImpl @Inject constructor(): CityTransformer {
     override fun divideIntoTwoList(totalList: List<CityEntity>): Array<List<City>> {
         val listOne = mutableListOf<City>()
         val listTwo = mutableListOf<City>()

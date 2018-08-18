@@ -1,9 +1,11 @@
 package com.demo.cl.app.data.repos.base
 
+import android.util.Log
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-open class RxReopsitory: BaseRepository(), ClearableRepository {
+abstract class RxReopsitory:  ClearableRepository() {
+
     val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     private fun clearDisposables() {

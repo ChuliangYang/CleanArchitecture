@@ -3,6 +3,7 @@ package com.demo.cl.app.data.repos
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Transformations
+import android.util.Log
 import com.demo.cl.app.data.entity.CityEntity
 import com.demo.cl.app.data.entity.utils.EmptyLiveData
 import com.demo.cl.app.data.entity.utils.LiveDataAdapter
@@ -18,11 +19,17 @@ import com.demo.cl.app.domain.entity.City
 import com.demo.cl.app.domain.entity.protocol.DataResource
 import com.demo.cl.app.domain.entity.protocol.LiveDataEntity
 import com.demo.cl.app.domain.repo.CityRepository
+import com.demo.cl.app.presentation.viewmodel.CityListViewModel
+import com.demo.cl.app.presentation.viewmodel.base.BaseViewModel
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+import javax.inject.Singleton
+import kotlin.reflect.KClass
 
-class CityRepositoryImpl constructor(val localSource: CityLocalSource, val remoteSource: CityRemoteSource, val transformer: CityTransformer) : RxReopsitory(), CityRepository {
+@Singleton
+class CityRepositoryImpl @Inject constructor(val localSource: CityLocalSource, val remoteSource: CityRemoteSource, val transformer: CityTransformer) : RxReopsitory(), CityRepository {
     private val title = MutableLiveData<DataResource<String>>()
     private val cities: LiveData<DataResource<List<CityEntity>>>
         get() {
@@ -70,5 +77,10 @@ class CityRepositoryImpl constructor(val localSource: CityLocalSource, val remot
             title.value = DataResource.success("test title${it}")
         })
         return LiveDataAdapter(title)
+    }
+
+    override fun autoClearWith(): List<KClass<out BaseViewModel>> {
+        Log.e("CityRepositoryImpl","autoClearWith${CityListViewModel::class}")
+        return arrayListOf(CityListViewModel::class)
     }
 }

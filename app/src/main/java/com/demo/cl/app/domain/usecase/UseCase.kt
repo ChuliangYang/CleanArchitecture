@@ -6,17 +6,17 @@ import com.demo.cl.app.domain.entity.protocol.ObservableEntity
 import com.demo.cl.app.domain.entity.protocol.Reactable
 
 sealed class UseCase<T, Result> {
-    abstract fun run(params:T?=null): Reactable<DataResource<Result>>
+    abstract fun run(params:T?=null): Reactable<Result>
 }
 
-abstract class UseCaseLiveData<T, Result>:UseCase<T, Result>(){
+abstract class UseCaseLiveData<T, Result>:UseCase<T, DataResource<Result>>(){
     final override fun run(params:T?): Reactable<DataResource<Result>>{
         return getLiveData(params)
     }
     abstract fun getLiveData(params:T?=null):LiveDataEntity<DataResource<Result>>
 }
 
-abstract class UseCaseObservable<T, Result>:UseCase<T, Result>(){
+abstract class UseCaseObservable<T, Result>:UseCase<T, DataResource<Result>>(){
     final override fun run(params:T?): Reactable<DataResource<Result>>{
         return getObservable(params)
     }
