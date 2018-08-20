@@ -3,7 +3,7 @@ package com.demo.cl.app.data.entity.utils
 import android.arch.lifecycle.LiveData
 
 /**
- * A LiveDataEntity class that has `null` value.
+ * A LiveData class that has `null` value.
  */
 class EmptyLiveData<T : Any?> private constructor() : LiveData<T>() {
     init {

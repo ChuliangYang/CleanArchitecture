@@ -52,7 +52,7 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     implementation "android.arch.persistence.room:runtime:$room_version"
     kapt "android.arch.persistence.room:compiler:$room_version"
-    // ViewModel and LiveDataEntity
+    // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
 
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"

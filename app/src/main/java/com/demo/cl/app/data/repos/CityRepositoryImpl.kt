@@ -80,7 +80,6 @@ class CityRepositoryImpl @Inject constructor(val localSource: CityLocalSource, v
     }
 
     override fun autoClearWith(): List<KClass<out BaseViewModel>> {
-        Log.e("CityRepositoryImpl","autoClearWith${CityListViewModel::class}")
         return arrayListOf(CityListViewModel::class)
     }
 }

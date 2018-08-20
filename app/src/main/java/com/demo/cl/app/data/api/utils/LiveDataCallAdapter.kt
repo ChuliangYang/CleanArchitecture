@@ -11,7 +11,7 @@ import java.lang.reflect.Type
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
- * A Retrofit adapter that converts the Call into a LiveDataEntity of NetworkResponse.
+ * A Retrofit adapter that converts the Call into a LiveData of NetworkResponse.
  * @param <R>
 </R> */
 class LiveDataCallAdapter<R>(private val responseType: Type) :
