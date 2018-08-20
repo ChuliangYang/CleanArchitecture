@@ -1,5 +1,5 @@
 # CleanArchitecture
-Data from [Json](https://gist.githubusercontent.com/MrCarlosYang/c1f004cb7f447ee5ccd6433bcb56d5af/raw/df3a570c9a0976e43b799be96da59186fc918ea7/CityList.json)
+Data from [Json](https://gist.githubusercontent.com/MrCarlosYang/c1f004cb7f447ee5ccd6433bcb56d5af/raw/df3a570c9a0976e43b799be96da59186fc918ea7/CityList.json), use room for data persistence
 
 ## Mock-up
 <img src="../master/picture/mock_up.png" alt="alt text" width="600" height="611">
@@ -16,3 +16,5 @@ Data from [Json](https://gist.githubusercontent.com/MrCarlosYang/c1f004cb7f447ee
 * Retrofit
 * Okhttp
 * Dagger-android
+* EventBus
+
