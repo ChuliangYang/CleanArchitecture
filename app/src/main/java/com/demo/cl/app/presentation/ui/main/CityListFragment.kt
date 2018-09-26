@@ -60,18 +60,11 @@ class CityListPageAdapter(val twoList: Array<List<CityModel>>) : ViewStatePagerA
         val baseContext = container?.context
         val rv = LayoutInflater.from(baseContext).inflate(R.layout.recyclerview, container, false) as RecyclerView
         rv.apply {
-            rv.layoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.VERTICAL, false)
-            if (position == 0) {
-                rv.adapter = CityAdapterBind().apply {
+            layoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.VERTICAL, false)
+            adapter = CityAdapterBind().apply {
                     submitList(twoList[position])
-                }
-            } else {
-                rv.adapter = CityAdapterBind().apply {
-                    submitList(twoList[position])
-                }
-            }
+                } 
         }
-
         return rv
     }
 
